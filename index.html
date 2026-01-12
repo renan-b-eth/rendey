@@ -6,68 +6,115 @@
     <title>Rendey LLC | Software Development & Technical Consulting</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; }
+    </style>
 </head>
-<body class="bg-slate-50 text-slate-900 font-['Inter']">
+<body class="bg-slate-50 text-slate-900">
+
     <nav class="bg-white border-b border-slate-200 sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between h-16 items-center">
-            <div class="text-2xl font-bold text-blue-800 tracking-tighter">RENDEY LLC</div>
-            <div class="hidden md:flex space-x-8 items-center">
-                <a href="#services" class="text-sm font-semibold hover:text-blue-600">Services</a>
-                <a href="#about" class="text-sm font-semibold hover:text-blue-600">About</a>
-                <a href="mailto:contact@rendey.store" class="bg-blue-700 text-white px-5 py-2 rounded shadow-sm hover:bg-blue-800 transition text-sm">Contact Us</a>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="text-2xl font-bold text-blue-800 tracking-tighter">RENDEY LLC</div>
+                
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#services" class="text-sm font-semibold hover:text-blue-600 transition">Services</a>
+                    <a href="#about" class="text-sm font-semibold hover:text-blue-600 transition">About</a>
+                    <a href="mailto:contact@rendey.store" class="bg-blue-700 text-white px-5 py-2 rounded shadow-sm hover:bg-blue-800 transition text-sm font-bold">Contact Us</a>
+                </div>
+
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-slate-600 hover:text-blue-800 focus:outline-none">
+                        <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200">
+            <div class="px-4 pt-2 pb-6 space-y-2 flex flex-col items-center">
+                <a href="#services" class="block py-3 text-lg font-semibold border-b border-slate-100 w-full text-center">Services</a>
+                <a href="#about" class="block py-3 text-lg font-semibold border-b border-slate-100 w-full text-center">About</a>
+                <a href="mailto:contact@rendey.store" class="mt-4 bg-blue-700 text-white px-8 py-3 rounded-lg font-bold text-center w-full">Contact Us</a>
             </div>
         </div>
     </nav>
 
-    <header class="py-24 bg-white border-b border-slate-100">
+    <header class="py-16 md:py-24 bg-white border-b border-slate-100">
         <div class="max-w-7xl mx-auto px-4 text-center">
-            <span class="text-blue-600 font-bold uppercase tracking-widest text-xs">Innovation from Boise, Idaho</span>
-            <h1 class="mt-6 text-5xl font-extrabold text-slate-900 tracking-tight lg:text-6xl">High-Performance Software for Modern Enterprises</h1>
-            <p class="mt-6 text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">Rendey LLC provides bespoke software engineering, AI-driven automation, and specialized technical consulting for private companies and public sector agencies worldwide.</p>
+            <span class="text-blue-600 font-bold uppercase tracking-widest text-xs block mb-4">Innovation from Boise, Idaho</span>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight">High-Performance Software for Modern Enterprises</h1>
+            <p class="mt-6 text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed px-2">Rendey LLC provides bespoke software engineering, AI-driven automation, and specialized technical consulting for private companies and public sector agencies worldwide.</p>
         </div>
     </header>
 
-    <section id="services" class="py-24">
+    <section id="services" class="py-16 md:py-24 bg-slate-50">
         <div class="max-w-7xl mx-auto px-4">
-            <div class="grid md:grid-cols-3 gap-12">
-                <div class="bg-white p-10 rounded-xl shadow-sm border border-slate-200">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 md:p-10 rounded-xl shadow-sm border border-slate-200">
                     <h3 class="text-xl font-bold mb-4 text-blue-800">Custom Enterprise SaaS</h3>
-                    <p class="text-slate-600 leading-relaxed">Development of scalable cloud applications, internal management tools, and secure database architectures tailored to your business flow.</p>
+                    <p class="text-slate-600 leading-relaxed text-sm md:text-base">Development of scalable cloud applications, internal management tools, and secure database architectures tailored to your business flow.</p>
                 </div>
-                <div class="bg-white p-10 rounded-xl shadow-sm border border-slate-200">
+                <div class="bg-white p-8 md:p-10 rounded-xl shadow-sm border border-slate-200">
                     <h3 class="text-xl font-bold mb-4 text-blue-800">Public Sector Systems</h3>
-                    <p class="text-slate-600 leading-relaxed">Specialized in government software solutions, ensuring full compliance with regulatory standards and high-availability performance.</p>
+                    <p class="text-slate-600 leading-relaxed text-sm md:text-base">Specialized in government software solutions, ensuring full compliance with regulatory standards and high-availability performance.</p>
                 </div>
-                <div class="bg-white p-10 rounded-xl shadow-sm border border-slate-200">
+                <div class="bg-white p-8 md:p-10 rounded-xl shadow-sm border border-slate-200">
                     <h3 class="text-xl font-bold mb-4 text-blue-800">AI & IoT Integration</h3>
-                    <p class="text-slate-600 leading-relaxed">Leveraging computer vision, machine learning, and IoT hardware (ESP32) to create accessible and automated environments.</p>
+                    <p class="text-slate-600 leading-relaxed text-sm md:text-base">Leveraging computer vision, machine learning, and IoT hardware to create accessible and automated environments.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="bg-slate-900 text-slate-400 py-16">
-        <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-12 border-b border-slate-800 pb-12">
+    <section id="about" class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold text-slate-900 mb-6">About Our Firm</h2>
+            <p class="text-slate-600 leading-relaxed mb-4">Incorporated in New Mexico with headquarters in Boise, Idaho, Rendey LLC combines American corporate reliability with world-class engineering talent.</p>
+            <p class="text-slate-600 leading-relaxed">Our focus is on B2B partnerships that require high-security software and digital transformation.</p>
+        </div>
+    </section>
+
+    <footer class="bg-slate-900 text-slate-400 py-12">
+        <div class="max-w-7xl mx-auto px-4 text-center md:text-left grid md:grid-cols-2 gap-10 border-b border-slate-800 pb-12">
             <div>
-                <h4 class="text-white font-bold mb-4">Corporate Office</h4>
-                <p>Rendey LLC</p>
-                <p>5060 E WOODCUTTER DR 64930</p>
-                <p>Boise, ID 83716, USA</p>
-                <p class="mt-4">Contact: <span class="text-blue-400 font-semibold">+1 (505) 308-6126</span></p>
-                <p class="mt-4">Email: <span class="text-blue-400 font-semibold">contact@rendey.store</span></p>
+                <h4 class="text-white font-bold mb-4 uppercase tracking-widest text-sm">Corporate Office</h4>
+                <p class="text-sm">Rendey LLC</p>
+                <p class="text-sm">5060 E WOODCUTTER DR 64930</p>
+                <p class="text-sm">Boise, ID 83716, USA</p>
+                 <p class="mt-4">Contact: <span class="text-blue-400 font-semibold">+1 (505) 308-6126</span></p>
+                <p class="mt-4 text-sm font-semibold text-blue-400">contact@rendey.store</p>
             </div>
-            <div class="md:text-right">
-                <h4 class="text-white font-bold mb-4">Legal</h4>
-                <div class="flex flex-col md:items-end space-y-2 text-sm">
-                    <a href="terms.html" class="hover:text-white">Terms of Service</a>
-                    <a href="privacy.html" class="hover:text-white">Privacy Policy</a>
-                    <a href="refund.html" class="hover:text-white">Refund Policy</a>
-                </div>
+            <div class="flex flex-col md:items-end space-y-3">
+                <h4 class="text-white font-bold mb-2 uppercase tracking-widest text-sm">Legal Documents</h4>
+                <a href="terms.html" class="text-sm hover:text-white transition">Terms of Service</a>
+                <a href="privacy.html" class="text-sm hover:text-white transition">Privacy Policy</a>
+                <a href="refund.html" class="text-sm hover:text-white transition">Refund Policy</a>
             </div>
         </div>
-        <div class="max-w-7xl mx-auto px-4 mt-8 text-xs uppercase tracking-widest">
-            &copy; 2026 Rendey LLC. Registered in New Mexico, USA.
+        <div class="max-w-7xl mx-auto px-4 mt-8 text-[10px] md:text-xs uppercase tracking-[0.2em] text-center opacity-50">
+            &copy; 2026 Rendey LLC. New Mexico Registered. Idaho Based Operations.
         </div>
     </footer>
+
+    <script>
+        const btn = document.getElementById('mobile-menu-button');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close menu when clicking a link
+        const links = menu.querySelectorAll('a');
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+    </script>
 </body>
 </html>
