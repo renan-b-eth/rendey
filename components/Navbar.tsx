@@ -11,11 +11,11 @@ import { Container, Button } from './ui'
 import { useI18n } from './i18n'
 
 const nav = [
-  { href: '#edtech', key: 'EdTech Suite', isAnchor: true },
-  { href: '#labs', key: 'Labs', isAnchor: true },
-  { href: '#media', key: 'Mídia', isAnchor: true },
-  { href: '/company', key: 'nav.company', isAnchor: false },
-  { href: '/contact', key: 'nav.contact', isAnchor: false },
+  { href: '#enterprise', key: 'Enterprise', isAnchor: true },
+  { href: '#productivity', key: 'Media & Productivity', isAnchor: true },
+  { href: '#labs', key: 'R&D Labs', isAnchor: true },
+  { href: '/company', key: 'Company', isAnchor: false },
+  { href: '/contact', key: 'Contact', isAnchor: false },
 ] as const
 
 export function Navbar() {

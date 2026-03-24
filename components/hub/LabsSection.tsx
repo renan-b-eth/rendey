@@ -7,14 +7,14 @@ import { ecosystem } from '@/components/data/ecosystem'
 
 const statusConfig = {
   beta: {
-    label: 'Beta Fechado',
+    label: 'Closed Beta',
     color: 'text-amber-400',
     bg: 'bg-amber-400/10',
     border: 'border-amber-400/30',
     pulse: 'animate-pulse',
   },
   development: {
-    label: 'Em Desenvolvimento',
+    label: 'In Development',
     color: 'text-cyan-400',
     bg: 'bg-cyan-400/10',
     border: 'border-cyan-400/30',
@@ -93,7 +93,7 @@ export function LabsSection() {
 
       <Container className="relative">
         <SectionTitle
-          eyebrow="Labs & Future"
+          eyebrow="Research & Development"
           title={ecosystem.labs.title}
           subtitle={ecosystem.labs.subtitle}
         />
@@ -162,7 +162,7 @@ export function LabsSection() {
                     {/* Coming Soon indicator */}
                     <div className="mt-6 flex items-center gap-2 text-sm text-white/40">
                       <Clock size={14} />
-                      <span>Em breve</span>
+                      <span>Coming Soon</span>
                       <ArrowRight size={14} className="ml-auto opacity-0 transition-all group-hover:ml-2 group-hover:opacity-100" />
                     </div>
                   </div>
@@ -183,15 +183,15 @@ export function LabsSection() {
           <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-white/10">
             <FlaskConical size={24} className="text-fuchsia-400" />
           </div>
-          <h3 className="mt-4 text-lg font-semibold text-white">Quer ser um early adopter?</h3>
+          <h3 className="mt-4 text-lg font-semibold text-white">Interested in Early Access?</h3>
           <p className="mt-2 text-sm text-white/60">
-            Entre em contato para participar dos programas beta fechados e ter acesso antecipado às nossas inovações.
+            Contact our team to participate in closed beta programs and gain early access to our innovations.
           </p>
           <a
             href="/contact"
             className="mt-4 inline-flex items-center gap-2 rounded-full bg-white px-6 py-2.5 text-sm font-medium text-black transition-colors hover:bg-white/90"
           >
-            Quero Participar do Beta
+            Apply for Beta Access
             <ArrowRight size={16} />
           </a>
         </motion.div>

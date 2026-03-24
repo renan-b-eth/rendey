@@ -20,29 +20,29 @@ export function Footer() {
           </div>
 
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/60">Ecosistema</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/60">Ecosystem</p>
             <ul className="mt-3 space-y-2 text-sm">
-              <li><a href="#edtech" className="text-white/70 hover:text-white">EdTech Suite</a></li>
-              <li><a href="#labs" className="text-white/70 hover:text-white">Labs & Future</a></li>
-              <li><a href="#media" className="text-white/70 hover:text-white">Mídia</a></li>
+              <li><a href="#enterprise" className="text-white/70 hover:text-white">Enterprise Solutions</a></li>
+              <li><a href="#productivity" className="text-white/70 hover:text-white">Media & Productivity</a></li>
+              <li><a href="#labs" className="text-white/70 hover:text-white">R&D Labs</a></li>
             </ul>
           </div>
 
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/60">{t('footer.companyInfo')}</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/60">Company</p>
             <ul className="mt-3 space-y-2 text-sm">
-              <li><Link className="text-white/70 hover:text-white" href="/company">{t('nav.company')}</Link></li>
-              <li><Link className="text-white/70 hover:text-white" href="/products">{t('nav.products')}</Link></li>
-              <li><Link className="text-white/70 hover:text-white" href="/contact">{t('nav.contact')}</Link></li>
+              <li><Link className="text-white/70 hover:text-white" href="/company">About Us</Link></li>
+              <li><Link className="text-white/70 hover:text-white" href="/products">Products</Link></li>
+              <li><Link className="text-white/70 hover:text-white" href="/contact">Contact</Link></li>
             </ul>
           </div>
 
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/60">{t('footer.legal')}</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/60">Legal</p>
             <ul className="mt-3 space-y-2 text-sm">
-              <li><Link className="text-white/70 hover:text-white" href="/privacy-policy">{t('legal.privacy.title')}</Link></li>
-              <li><Link className="text-white/70 hover:text-white" href="/terms-of-service">{t('legal.terms.title')}</Link></li>
-              <li><Link className="text-white/70 hover:text-white" href="/refund-policy">{t('legal.refund.title')}</Link></li>
+              <li><Link className="text-white/70 hover:text-white" href="/privacy-policy">Privacy Policy</Link></li>
+              <li><Link className="text-white/70 hover:text-white" href="/terms-of-service">Terms of Service</Link></li>
+              <li><Link className="text-white/70 hover:text-white" href="/refund-policy">Refund Policy</Link></li>
             </ul>
           </div>
         </div>
@@ -64,7 +64,7 @@ export function Footer() {
               </p>
             </div>
             <div className="text-right md:text-right">
-              <p className="text-xs text-white/50">{t('home.support')}</p>
+              <p className="text-xs text-white/50">Enterprise Support</p>
               <p className="mt-1 text-sm text-white/70">
                 <a className="hover:text-white" href={`mailto:${site.supportEmail}`}>{site.supportEmail}</a>
               </p>
@@ -76,8 +76,8 @@ export function Footer() {
         </div>
 
         <div className="flex flex-col items-center justify-between gap-3 border-t border-white/10 py-8 text-xs text-white/55 sm:flex-row">
-          <p>© {new Date().getFullYear()} {site.name}. {t('footer.rights')}</p>
-          <p className="text-center sm:text-right">Hub Oficial do Ecossistema Rendey • Built with Next.js • Deployed on Vercel</p>
+          <p>© {new Date().getFullYear()} {site.name}. All rights reserved.</p>
+          <p className="text-center sm:text-right">Official Hub of Rendey LLC • Built with Next.js • Deployed on Vercel</p>
         </div>
       </Container>
     </footer>

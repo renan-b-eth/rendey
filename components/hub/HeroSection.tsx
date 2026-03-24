@@ -1,17 +1,16 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { ArrowRight, Sparkles, Building2, Zap, Globe } from 'lucide-react'
+import { Building2, ArrowRight, Sparkles, Trophy, Users } from 'lucide-react'
+import Link from 'next/link'
 import { Container, Badge, Button } from '@/components/ui'
-import { site } from '@/components/site-config'
 import { ecosystem } from '@/components/data/ecosystem'
 
 const stats = [
-  { label: 'Projetos Ativos', value: '6', icon: Zap },
-  { label: 'Escolas Atendidas', value: '100+', icon: Building2 },
-  { label: 'Alunos Impactados', value: '50K+', icon: Globe },
+  { label: 'Enterprise Clients', value: '50+', icon: Building2 },
+  { label: 'Students Reached', value: '100K+', icon: Users },
+  { label: 'Government Partners', value: '3', icon: Trophy },
 ]
 
 export function HeroSection() {
@@ -25,7 +24,8 @@ export function HeroSection() {
     return () => window.removeEventListener('mousemove', handleMouseMove)
   }, [])
 
-  const activeProducts = ecosystem.edtech.products.filter((p) => p.status === 'active').length +
+  const activeProducts = ecosystem.enterprise.products.filter((p) => p.status === 'active').length +
+    ecosystem.productivity.products.filter((p) => p.status === 'active').length +
     ecosystem.media.products.filter((p) => p.status === 'active').length
 
   const labsProducts = ecosystem.labs.products.length
@@ -63,9 +63,9 @@ export function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <Badge className="mb-6 border-violet-500/30 bg-violet-500/10 text-violet-300">
+            <Badge className="mb-6 border-indigo-500/30 bg-indigo-500/10 text-indigo-300">
               <Building2 size={14} className="mr-2" />
-              {site.name} • Fundada em {site.founded}
+              Rendey LLC • New Mexico, United States
             </Badge>
           </motion.div>
 
@@ -76,13 +76,13 @@ export function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            Construindo o{' '}
-            <span className="bg-gradient-to-r from-violet-400 via-fuchsia-400 to-cyan-400 bg-clip-text text-transparent">
-              Futuro
-            </span>{' '}
-            da{' '}
-            <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-violet-400 bg-clip-text text-transparent">
+            Engineering the Future of{' '}
+            <span className="bg-gradient-to-r from-indigo-400 via-violet-400 to-indigo-400 bg-clip-text text-transparent">
               EdTech
+            </span>{' '}
+            and{' '}
+            <span className="bg-gradient-to-r from-violet-400 via-indigo-400 to-violet-400 bg-clip-text text-transparent">
+              Data-Driven Solutions
             </span>
           </motion.h1>
 
@@ -93,8 +93,8 @@ export function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            Hub oficial do ecossistema Rendey LLC. Soluções tecnológicas de ponta
-            para transformar a educação brasileira e impulsionar inovação global.
+            The official corporate hub of Rendey LLC. Enterprise-grade platforms powering educational
+            institutions, government partnerships, and artificial intelligence research.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -105,10 +105,10 @@ export function HeroSection() {
             transition={{ duration: 0.5, delay: 0.3 }}
           >
             <Button
-              href="#edtech"
-              className="group bg-gradient-to-r from-violet-600 to-fuchsia-600 hover:from-violet-500 hover:to-fuchsia-500"
+              href="#enterprise"
+              className="group bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500"
             >
-              Explorar Produtos
+              Explore Our Ecosystem
               <ArrowRight size={18} className="ml-2 transition-transform group-hover:translate-x-1" />
             </Button>
             <Button
@@ -117,7 +117,7 @@ export function HeroSection() {
               className="border-white/20 hover:bg-white/5"
             >
               <Sparkles size={18} className="mr-2" />
-              Falar com o Time
+              Enterprise Contact
             </Button>
           </motion.div>
 
@@ -132,7 +132,7 @@ export function HeroSection() {
               <div key={stat.label} className="text-center">
                 <div className="flex justify-center">
                   <div className="mb-2 flex h-10 w-10 items-center justify-center rounded-xl bg-white/10">
-                    <stat.icon size={20} className="text-violet-400" />
+                    <stat.icon size={20} className="text-indigo-400" />
                   </div>
                 </div>
                 <p className="text-2xl font-bold text-white">{stat.value}</p>
@@ -149,18 +149,18 @@ export function HeroSection() {
             transition={{ duration: 0.5, delay: 0.5 }}
           >
             <Link
-              href="#edtech"
+              href="#enterprise"
               className="flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-4 py-2 text-sm text-emerald-300 transition-colors hover:bg-emerald-500/20"
             >
               <span className="h-2 w-2 rounded-full bg-emerald-400" />
-              {activeProducts} Produtos EdTech Ativos
+              {activeProducts} Active Enterprise Solutions
             </Link>
             <Link
               href="#labs"
               className="flex items-center gap-2 rounded-full border border-amber-500/30 bg-amber-500/10 px-4 py-2 text-sm text-amber-300 transition-colors hover:bg-amber-500/20"
             >
               <span className="h-2 w-2 rounded-full bg-amber-400" />
-              {labsProducts} Projetos em R&D
+              {labsProducts} R&D Initiatives
             </Link>
           </motion.div>
 
@@ -176,7 +176,7 @@ export function HeroSection() {
               transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
               className="flex flex-col items-center gap-2"
             >
-              <span className="text-xs text-white/40">Scroll para explorar</span>
+              <span className="text-xs text-white/40">Scroll to explore</span>
               <div className="h-8 w-5 rounded-full border-2 border-white/20 p-1">
                 <motion.div
                   className="h-2 w-full rounded-full bg-white/40"

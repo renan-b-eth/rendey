@@ -1,17 +1,17 @@
 'use client'
 
 import { HeroSection } from './HeroSection'
-import { EdTechSuiteSection } from './EdTechSuiteSection'
+import { EnterpriseSolutions } from './EnterpriseSolutions'
+import { MediaProductivity } from './MediaProductivity'
 import { LabsSection } from './LabsSection'
-import { MediaSection } from './MediaSection'
 
 export function HomePageHub() {
   return (
-    <>
+    <main>
       <HeroSection />
-      <EdTechSuiteSection />
+      <EnterpriseSolutions />
+      <MediaProductivity />
       <LabsSection />
-      <MediaSection />
-    </>
+    </main>
   )
 }
