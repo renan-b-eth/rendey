@@ -106,7 +106,7 @@ export function LabsSection() {
           viewport={{ once: true, margin: '-100px' }}
         >
           {ecosystem.labs.products.map((product) => {
-            const status = statusConfig[product.status]
+            const status = statusConfig[product.status as keyof typeof statusConfig]
 
             return (
               <motion.div key={product.id} variants={itemVariants}>
