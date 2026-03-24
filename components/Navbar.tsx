@@ -11,10 +11,11 @@ import { Container, Button } from './ui'
 import { useI18n } from './i18n'
 
 const nav = [
-  { href: '/products', key: 'nav.products' },
-  { href: '/company', key: 'nav.company' },
-  { href: '/contact', key: 'nav.contact' },
-  { href: '/privacy-policy', key: 'nav.privacy' },
+  { href: '#edtech', key: 'EdTech Suite', isAnchor: true },
+  { href: '#labs', key: 'Labs', isAnchor: true },
+  { href: '#media', key: 'Mídia', isAnchor: true },
+  { href: '/company', key: 'nav.company', isAnchor: false },
+  { href: '/contact', key: 'nav.contact', isAnchor: false },
 ] as const
 
 export function Navbar() {
@@ -90,11 +91,21 @@ export function Navbar() {
             </Link>
 
             <nav className="hidden items-center gap-2 md:flex">
-              {nav.map((i) => (
-                <Link key={i.href} href={i.href} className="rounded-lg px-3 py-2 text-sm text-white/70 hover:bg-white/5 hover:text-white">
-                  {t(i.key)}
-                </Link>
-              ))}
+              {nav.map((i) =>
+                i.isAnchor ? (
+                  <a
+                    key={i.href}
+                    href={i.href}
+                    className="rounded-lg px-3 py-2 text-sm text-white/70 hover:bg-white/5 hover:text-white"
+                  >
+                    {i.key}
+                  </a>
+                ) : (
+                  <Link key={i.href} href={i.href} className="rounded-lg px-3 py-2 text-sm text-white/70 hover:bg-white/5 hover:text-white">
+                    {t(i.key)}
+                  </Link>
+                )
+              )}
               <button
                 type="button"
                 onClick={() => setLang(lang === 'en' ? 'pt' : 'en')}
@@ -130,16 +141,27 @@ export function Navbar() {
                 className="py-4"
               >
                 <div className="grid gap-2">
-                  {nav.map((i) => (
-                    <Link
-                      key={i.href}
-                      href={i.href}
-                      onClick={() => setOpen(false)}
-                      className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white/80 hover:bg-white/10"
-                    >
-                      {t(i.key)}
-                    </Link>
-                  ))}
+                  {nav.map((i) =>
+                    i.isAnchor ? (
+                      <a
+                        key={i.href}
+                        href={i.href}
+                        onClick={() => setOpen(false)}
+                        className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white/80 hover:bg-white/10"
+                      >
+                        {i.key}
+                      </a>
+                    ) : (
+                      <Link
+                        key={i.href}
+                        href={i.href}
+                        onClick={() => setOpen(false)}
+                        className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white/80 hover:bg-white/10"
+                      >
+                        {t(i.key)}
+                      </Link>
+                    )
+                  )}
                   <button
                     type="button"
                     onClick={() => {
